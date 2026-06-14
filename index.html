@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="ko" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JANG WOO YOUNG — 공식 개인 브랜드 홈</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts: Source Serif 4 & Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,300;1,8..60,400&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        serif: ['"Source Serif 4"', 'Georgia', 'serif'],
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        mb: {
+                            blue: '#0260ab',        // 테마 프라이머리 (벤츠 블루)
+                            blueActive: '#014880',  // 테마 액티브
+                            blueButton: '#0078d6',  // 버튼 테마
+                            grey05: '#f9f9f9',      // 중립 단계
+                            grey10: '#141414',      // 어두운 카드 배경
+                            grey55: '#919191',      // 보조 텍스트
+                            grey60: '#9f9f9f',      // 뮤트 텍스트
+                            grey80: '#dbdbdb',      // 경계선 강함
+                            grey85: '#e8e8e8',      // 경계선 약함
+                        }
+                    },
+                    spacing: {
+                        'grid-gutter': '2.5rem',
+                    },
+                    width: {
+                        'grid-content': '86vw',
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        /* 메르세데스-벤츠 지향 에디토리얼 타이포그래피 */
+        body {
+            background-color: #ffffff;
+            color: #000000;
+            font-family: 'Inter', sans-serif;
+            font-size: 14px;
+            line-height: 22px;
+            font-weight: 400;
+            word-break: keep-all; /* 한글 줄바꿈 가독성 최적화 */
+        }
+        .serif-title {
+            font-family: "Source Serif 4", Georgia, serif;
+            font-weight: 300;
+            letter-spacing: -0.01em;
+        }
+        .eyebrow-lowercase {
+            font-family: 'Inter', sans-serif;
+            font-size: 11px;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+        }
+        /* 미니멀한 스크롤바 커스텀 */
+        ::-webkit-scrollbar {
+            width: 5px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #ffffff;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #000000;
+        }
+    </style>
+</head>
+<body class="bg-white text-black antialiased selection:bg-mb-blue selection:text-white">
+
+    <!-- 탑 네비게이션바 (메르세데스 스타일의 미니멀 시네마 바) -->
+    <nav class="bg-black text-white h-14 px-4 md:px-12 flex items-center justify-between sticky top-0 z-50 border-b border-zinc-900">
+        <div class="flex items-center space-x-3">
+            <!-- 미니멀 엠블럼 -->
+            <div class="w-6 h-6 flex items-center justify-center border border-white rounded-none">
+                <span class="text-[10px] font-serif italic tracking-tighter">W</span>
+            </div>
+            <!-- 개인 브랜드 정체성을 전면에 내세운 타이틀 구조 -->
+            <span class="text-xs font-semibold tracking-widest font-serif uppercase">JANG WOO YOUNG</span>
+        </div>
+        
+        <!-- 네비게이션 링크 -->
+        <div class="flex items-center space-x-6 md:space-x-8 text-xs font-light text-zinc-400">
+            <a href="#about" class="hover:text-white transition-colors duration-200">자기소개</a>
+            <a href="#business" class="hover:text-white transition-colors duration-200">비즈니스 & 보안</a>
+            <a href="#activities" class="hover:text-white transition-colors duration-200">주요 활동</a>
+            <a href="#contact" class="hover:text-white transition-colors duration-200">연락처</a>
+        </div>
+    </nav>
+
+    <!-- 히어로 섹션 (시네마 밴드 백드롭 + 장우영 핵심 가치 매니페스토) -->
+    <header class="bg-black text-white relative py-12 md:py-24 overflow-hidden border-b border-zinc-900">
+        <!-- 배경 상호작용 네트워크 그리드 캔버스 -->
+        <canvas id="heroCanvas" class="absolute inset-0 opacity-20 pointer-events-none"></canvas>
+
+        <div class="max-w-[86vw] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 items-center relative z-10">
+            <!-- 왼쪽: 인트로 메시지 (장우영 성명 강조형 모델링) -->
+            <div class="lg:col-span-7 space-y-6">
+                <div class="flex items-center space-x-2">
+                    <span class="bg-mb-blue text-[10px] text-white px-2 py-0.5 tracking-widest font-mono uppercase">CEO & 브랜드 디렉터</span>
+                    <span class="h-px w-8 bg-zinc-700"></span>
+                    <span class="text-xs text-zinc-500 font-mono">설립일. 2025</span>
+                </div>
+                <!-- JANG WOOYOUNG 명확한 성명 표기 -->
+                <h1 class="serif-title text-3xl md:text-5xl lg:text-6xl font-light leading-tight text-white">
+                    JANG WOO YOUNG<br>
+                    <span class="text-zinc-400 italic">가치를 실현으로 연결하다.</span>
+                </h1>
+                <p class="text-zinc-400 font-sans text-sm md:text-base max-w-xl leading-relaxed text-justify">
+                    안녕하십니까, 장우영입니다. 저는  마케팅 기업 <strong class="text-white">커넥스네트웍스(CONX Networks)</strong>의 창업자이자 대표입니다. 탄탄한 정보보안 지식과 협동 능력을 바탕으로, 신뢰할 수 있는 데이터 구조 위에서 영감 가득한 브랜드 마케팅 솔루션을 설계하고 있습니다.
+                </p>
+                <div class="flex flex-wrap gap-2 pt-2">
+                    <span class="bg-zinc-900 text-zinc-400 text-xs px-3 py-1.5 border border-zinc-800 font-mono">#장우영_공식홈</span>
+                    <span class="bg-zinc-900 text-zinc-400 text-xs px-3 py-1.5 border border-zinc-800 font-mono">#커넥스네트웍스_대표</span>
+                    <span class="bg-zinc-900 text-zinc-400 text-xs px-3 py-1.5 border border-zinc-800 font-mono">#정보보안_전문가</span>
+                </div>
+            </div>
+            
+            <!-- 오른쪽: 장우영 대표의 핵심 가치 매니페스토 (의미가 모호한 캔버스 엔진 완벽 제거) -->
+            <div class="lg:col-span-5 flex flex-col justify-center items-center w-full">
+                <div class="w-full bg-zinc-950 border border-zinc-800 rounded-none p-6 relative overflow-hidden text-left">
+                    <div class="flex justify-between items-center border-b border-zinc-900 pb-4 mb-5">
+                        <div class="flex items-center space-x-2">
+                            <span class="w-2 h-2 bg-mb-blue"></span>
+                            <span class="font-mono text-[11px] text-zinc-400 tracking-wider">CORE VALUE MANIFESTO</span>
+                        </div>
+                        <span class="font-mono text-[10px] text-zinc-500">신조 & 원칙</span>
+                    </div>
+                    
+                    <div class="space-y-5">
+                        <div class="border-b border-zinc-900 pb-4">
+                            <div class="flex items-center space-x-2">
+                                <span class="text-xs font-mono text-mb-blue">01</span>
+                                <h4 class="font-sans font-semibold text-xs text-white">마케팅 (Data-Driven)</h4>
+                            </div>
+                            <p class="text-zinc-400 text-xs mt-1.5 leading-relaxed">
+                                추측이나 감각에만 의존하지 않고, 철저하게 수집하고 분석한 실제 데이터와 상권 흐름을 기반으로 강력한 마케팅 솔루션을 실행합니다.
+                            </p>
+                        </div>
+
+                        <div class="border-b border-zinc-900 pb-4">
+                            <div class="flex items-center space-x-2">
+                                <span class="text-xs font-mono text-mb-blue">02</span>
+                                <h4 class="font-sans font-semibold text-xs text-white">정보보안 최적화 (Security-First)</h4>
+                            </div>
+                            <p class="text-zinc-400 text-xs mt-1.5 leading-relaxed">
+                                전국 경진대회 2관왕 수준의 탄탄한 지식과 기술력을 바탕으로, 비즈니스 인프라와 민감 데이터를 외부 위협으로부터 가장 완벽하게 지킵니다.
+                            </p>
+                        </div>
+
+                        <div>
+                            <div class="flex items-center space-x-2">
+                                <span class="text-xs font-mono text-mb-blue">03</span>
+                                <h4 class="font-sans font-semibold text-xs text-white">주도적 실행력 (Proactive Grit)</h4>
+                            </div>
+                            <p class="text-zinc-400 text-xs mt-1.5 leading-relaxed">
+                                "시련은 있어도 실패는 없다"는 단단한 가치관을 품고, 마주하는 제반 문제를 강한 추진력과 주도적인 평정심으로 극복해 냅니다.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- 자기소개 섹션 -->
+    <section id="about" class="max-w-[86vw] mx-auto py-12 md:py-20 border-b border-mb-grey85">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12">
+            <!-- 왼쪽: 핵심 요약 -->
+            <div class="lg:col-span-4 space-y-6">
+                <div>
+                    <span class="text-mb-grey60 eyebrow-lowercase block mb-2">editorial / overview</span>
+                    <h2 class="serif-title text-3xl text-black">핵심 요약</h2>
+                    <p class="text-zinc-500 mt-2 text-sm leading-relaxed">
+                        철저한 기술적 신뢰를 바탕으로 정직한 데이터를 수집하고, 독창적인 시각으로 진정한 가치를 전달하고자 합니다.
+                    </p>
+                </div>
+                
+                <ul class="space-y-3 text-xs font-mono border-t border-mb-grey85 pt-6">
+                    <li class="flex justify-between py-1.5 border-b border-mb-grey85">
+                        <span class="text-mb-grey55">활동 분야</span>
+                        <span class="font-medium text-black">마케팅 / 정보보안</span>
+                    </li>
+                    <li class="flex justify-between py-1.5 border-b border-mb-grey85">
+                        <span class="text-mb-grey55">현재 역할</span>
+                        <span class="font-medium text-black">커넥스네트웍스 대표</span>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- 오른쪽: 경영 및 개인 철학 에세이 -->
+            <div class="lg:col-span-8 flex flex-col justify-center space-y-6">
+                <span class="text-mb-blue eyebrow-lowercase block">philosophy / core value</span>
+                <h3 class="serif-title text-2xl md:text-3xl text-black leading-snug">
+                    "시련은 있어도 실패는 없다."<br>
+                    강한 주도성과 평정심으로 행동하고 가치를 창출합니다.
+                </h3>
+                <p class="text-zinc-700 leading-relaxed text-sm md:text-base text-justify">
+                    어려운 환경 속에서도 흔들리지 않는 굳건한 평정심을 기르며 스스로를 단단히 책임지는 태도를 익혔습니다. 주어진 목표를 주도적으로 매듭짓고, 한발 앞선 실행력으로 문제를 해결해 나가는 것이 저의 핵심 강점입니다.
+                </p>
+                <p class="text-zinc-700 leading-relaxed text-sm md:text-base text-justify">
+                    마케팅 기업 <strong class="text-black font-semibold">커넥스네트웍스(CONX Networks)</strong>를 설립해 현장의 실무 흐름을 치열하게 익히고 있습니다. 데이터가 오가는 전 과정을 안전하게 다룰 수 있는 정보보안 지식을 접목하고, 대중의 마음을 움직이는 깔끔하고 세련된 마케팅 기획을 함께 설계하고 있습니다.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 비즈니스 & 정보보안 섹션 -->
+    <section id="business" class="max-w-[86vw] mx-auto py-12 md:py-20 border-b border-mb-grey85">
+        <div class="space-y-12">
+            <div class="flex flex-col md:flex-row md:items-end justify-between border-b border-mb-grey85 pb-6">
+                <div>
+                    <span class="text-mb-grey60 eyebrow-lowercase block mb-2">business & security / record</span>
+                    <h2 class="serif-title text-3xl md:text-4xl text-black font-light">비즈니스 및 정보보안 연구</h2>
+                </div>
+                <p class="text-zinc-500 text-xs font-mono mt-2 md:mt-0">커넥스네트웍스 운영 및 보안 연구 이력</p>
+            </div>
+
+            <!-- 커넥스마케팅 소개 카드 -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 border border-mb-grey85 p-6 md:p-10 hover:border-black transition-colors duration-300 rounded-none">
+                <div class="lg:col-span-7 space-y-6">
+                    <div class="flex items-center space-x-2">
+                        <span class="text-xs bg-zinc-950 text-white px-2.5 py-1 font-mono tracking-wider uppercase rounded-none">비즈니스 브랜드</span>
+                        <a href="https://nssoft.cloud/" target="_blank" class="text-xs text-mb-blue hover:underline font-mono flex items-center space-x-1">
+                            <span>nssoft.cloud</span>
+                            <i class="fa-solid fa-arrow-up-right-from-square text-[9px]"></i>
+                        </a>
+                    </div>
+                    <h3 class="serif-title text-2xl md:text-3xl text-black">커넥스마케팅 (CONX Marketing)</h3>
+                    <p class="text-zinc-600 text-sm leading-relaxed text-justify">
+                        커넥스네트웍스가 운영하는 '커넥스마케팅'은 지역 소상공인과 중소기업의 성장을 밀착 지원하는 정밀 맞춤형 로컬 마케팅 서비스입니다. 
+                        철저한 분석 데이터를 근간으로 한 상권 파악,<br>네이버 플레이스 및 지도 최적화, 타깃 마케팅을 통해 점포 가치를 직관적이고 설득력 있게 확장합니다.
+                    </p>
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-2">
+                        <div class="border-l-2 border-mb-blue pl-3">
+                            <h4 class="font-sans font-semibold text-xs text-black">네이버 지도 최적화</h4>
+                            <p class="text-zinc-500 text-[11px] mt-0.5">상단 노출 및 유입 동선 관리</p>
+                        </div>
+                        <div class="border-l-2 border-mb-blue pl-3">
+                            <h4 class="font-sans font-semibold text-xs text-black">로컬 맞춤 홍보물</h4>
+                            <p class="text-zinc-500 text-[11px] mt-0.5">고감도 브랜딩 콘텐츠 제작</p>
+                        </div>
+                        <div class="border-l-2 border-mb-blue pl-3">
+                            <h4 class="font-sans font-semibold text-xs text-black">지역 주민 타깃팅</h4>
+                            <p class="text-zinc-500 text-[11px] mt-0.5">고효율 타깃 집중형 광고</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="lg:col-span-5 bg-zinc-950 p-6 flex flex-col justify-between text-white relative overflow-hidden min-h-[220px]">
+                    <div class="absolute -right-10 -bottom-10 w-48 h-48 bg-zinc-900 rounded-none opacity-30"></div>
+                    <div>
+                        <h4 class="font-mono text-zinc-500 text-xs uppercase tracking-wider">서비스 연계 아키텍처</h4>
+                        <div class="mt-4 font-mono text-[11px] text-zinc-400 space-y-1.5 leading-normal">
+                            <p class="text-mb-blue"><span class="text-zinc-600">$</span> nssoft --audit-map</p>
+                            <p class="text-emerald-500">> 연천군 검색 노출 빈도 및 위치 점검 완료</p>
+                            <p class="text-zinc-600"><span class="text-zinc-600">$</span> nssoft --inject-local-ad</p>
+                            <p class="text-zinc-400">> 지역 주민 활성 커뮤니티 타깃 지출 최적화</p>
+                        </div>
+                    </div>
+                    <div class="text-xs font-serif italic text-zinc-400 mt-4 border-t border-zinc-800 pt-3">
+                        "사장님은 장사에만 집중하도록, 마케팅은 데이터에 기반하여 투명하게 작동합니다."
+                    </div>
+                </div>
+            </div>
+
+            <!-- 보안 분야 이력 요약 카드 (영재교육원 미수료 관련 정교한 우회 및 역량 지향 서술 적용) -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- 정보보호영재교육원 심화 과정 (수료증 대신 공부했던 학구열과 수련 과정에 포커스) -->
+                <div class="border border-mb-grey85 p-6 flex flex-col justify-between hover:border-black transition-colors duration-300 rounded-none">
+                    <div class="space-y-4">
+                        <div class="flex justify-between items-start">
+                            <span class="text-xs text-mb-blue font-mono font-semibold">보안 교육 이력</span>
+                            <span class="text-xs text-zinc-400 font-mono">2025.04 ~ 2025.11</span>
+                        </div>
+                        <h3 class="serif-title text-2xl text-black">정보보호영재교육원 심화 과정</h3>
+                        <p class="text-zinc-600 text-xs md:text-sm leading-relaxed text-justify">
+                            대학 부설 국가 공인 정보보호영재교육원의 까다로운 선발 과정을 거쳐 보안 교육과정에 진입, 심도 있는 연수를 진행했습니다. 고객 간 암호화 등 핵심적인 보안 분석 기술들을 단단히 습득했습니다.
+                        </p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-mb-grey85 flex justify-between items-center text-xs">
+                        <span class="text-zinc-400 font-mono">서울여자대학교 정보보호교육원</span>
+                        <span class="font-semibold text-zinc-700 uppercase">교육 참여 및 연구 수행</span>
+                    </div>
+                </div>
+
+                <!-- 보안 경진대회 수상 -->
+                <div class="border border-mb-grey85 p-6 flex flex-col justify-between hover:border-black transition-colors duration-300 rounded-none">
+                    <div class="space-y-4">
+                        <div class="flex justify-between items-start">
+                            <span class="text-xs text-rose-600 font-mono font-semibold">전국 경진대회 수상</span>
+                            <span class="text-xs text-zinc-400 font-mono">2025.11.22</span>
+                        </div>
+                        <h3 class="serif-title text-2xl text-black">제11회 전국 정보보안 경진대회 2관왕</h3>
+                        <p class="text-zinc-600 text-xs md:text-sm leading-relaxed text-justify">
+                            공인 교육원 연합 전국 정보보안 경진대회에 출전하여 단체전 우수상 및 개인전 장려상을 동시에 달성했습니다. 취약점 탐색 역량과 보안 위협 대처력을 인정받았으며, 이는 커넥스네트웍스의 디지털 서비스를 위협으로부터 안전하게 지키는 강력한 토대가 됩니다.
+                        </p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-mb-grey85 flex justify-between items-center text-xs">
+                        <span class="text-zinc-400 font-mono">정보보호영재교육원 협의회</span>
+                        <span class="font-semibold text-rose-600 uppercase">2관왕 달성</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 에디토리얼 매거진 타이틀 중간 블랙 밴드 -->
+    <section class="bg-black text-white py-16 md:py-24 border-y border-zinc-900 relative overflow-hidden">
+        <div class="max-w-[86vw] mx-auto flex flex-col md:flex-row justify-between items-start md:items-center gap-8 relative z-10">
+            <div class="space-y-4">
+                <span class="text-xs font-mono tracking-widest text-mb-blue uppercase">Brand Philosophy</span>
+                <h2 class="serif-title text-3xl md:text-5xl font-light leading-tight">
+                    CONX NETWORKS.<br>
+                    <span class="italic font-normal text-zinc-300">ENGAGING EXTRAORDINARY.</span>
+                </h2>
+                <p class="text-zinc-400 text-sm max-w-xl leading-relaxed text-justify">
+                    우리는 단순한 광고가 아닌, 진정성 있는 브랜드의 울림을 전합니다. 탄탄한 보안 기술로 소중한 정보를 지키고, 아름다운 기획력을 통해 대중의 마음에 오래 기억되는 메시지를 만듭니다.
+                </p>
+            </div>
+            <div class="w-full md:w-auto">
+                <div class="border border-zinc-800 p-6 bg-zinc-950 text-left max-w-xs rounded-none">
+                    <h4 class="text-xs font-mono text-zinc-500 uppercase tracking-widest">회사 신념</h4>
+                    <p class="serif-title text-base text-zinc-300 mt-2">"경계를 허무는 무한한 가능성"</p>
+                    <div class="h-px bg-zinc-800 my-4"></div>
+                    <span class="text-xs text-zinc-400">대표 장우영</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 주요 활동 및 리더십 섹션 -->
+    <section id="activities" class="max-w-[86vw] mx-auto py-12 md:py-20 border-b border-mb-grey85">
+        <div class="space-y-12">
+            <div class="flex flex-col md:flex-row md:items-end justify-between border-b border-mb-grey85 pb-6">
+                <div>
+                    <span class="text-mb-grey60 eyebrow-lowercase block mb-2">activities & leadership / balance</span>
+                    <h2 class="serif-title text-3xl md:text-4xl text-black font-light">주요 활동 및 리더십</h2>
+                </div>
+                <p class="text-zinc-500 text-xs font-mono mt-2 md:mt-0">함께 이끌고 소통하며 완성해 나간 가치 있는 발자취</p>
+            </div>
+
+            <!-- 자치회장, 방송부장, 오케스트라 활동 -->
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                <!-- 학생자치회 회장 -->
+                <div class="border border-mb-grey85 p-6 hover:border-black transition-colors duration-300 flex flex-col justify-between rounded-none">
+                    <div>
+                        <div class="flex justify-between items-center mb-4">
+                            <span class="bg-zinc-100 text-zinc-800 text-[10px] px-2 py-0.5 font-mono rounded-none">리더십</span>
+                            <span class="text-xs text-zinc-400 font-mono">2026.03 ~ 현재</span>
+                        </div>
+                        <h3 class="serif-title text-2xl text-black mb-3">학생자치회 회장</h3>
+                        <p class="text-zinc-600 text-xs md:text-sm leading-relaxed text-justify">
+                            다양한 생각과 요구를 가진 많은 이들을 대표하여 합의를 도출하고 조율하는 역할을 해왔습니다. 사람들의 소리에 먼저 귀 기울이고 갈등을 슬기롭게 풀어나갔던 경험은, 고객의 소리를 분석하고 만족스러운 파트너십 전략을 수립하는 데 단단한 거름이 됩니다.
+                        </p>
+                    </div>
+                    <div class="mt-6 pt-3 border-t border-mb-grey85 text-xs text-zinc-400 font-mono">
+                        조직 소통 및 조율 역량
+                    </div>
+                </div>
+
+                <!-- 방송부 부장 -->
+                <div class="border border-mb-grey85 p-6 hover:border-black transition-colors duration-300 flex flex-col justify-between rounded-none">
+                    <div>
+                        <div class="flex justify-between items-center mb-4">
+                            <span class="bg-zinc-100 text-zinc-800 text-[10px] px-2 py-0.5 font-mono rounded-none">방송부</span>
+                            <span class="text-xs text-zinc-400 font-mono">2024.04 ~ 현재</span>
+                        </div>
+                        <h3 class="serif-title text-2xl text-black mb-3">방송부 부장</h3>
+                        <p class="text-zinc-600 text-xs md:text-sm leading-relaxed text-justify">
+                            오디오 믹서 세팅, 마이크 미세 조정 등 전문적인 하드웨어 설비를 책임지며 교내외 방송을 안정적으로 총괄하고 있습니다. 마케팅 콘텐츠의 핵심인 소리와 영상 기획을 근본적으로 이해하고, 돌발 상황에서 빠르게 장비를 정상화하는 순발력을 길렀습니다.
+                        </p>
+                    </div>
+                    <div class="mt-6 pt-3 border-t border-mb-grey85 text-xs text-zinc-400 font-mono">
+                        음향 및 미디어 장비 제어 능력
+                    </div>
+                </div>
+
+                <!-- 오케스트라 활동 (작년 팀파니 -> 현재 세트드럼 변경 분 완벽 적용) -->
+                <div class="border border-mb-grey85 p-6 hover:border-black transition-colors duration-300 flex flex-col justify-between rounded-none">
+                    <div>
+                        <div class="flex justify-between items-center mb-4">
+                            <span class="bg-zinc-100 text-zinc-800 text-[10px] px-2 py-0.5 font-mono rounded-none">음악 활동</span>
+                            <span class="text-xs text-zinc-400 font-mono">2024.03 ~ 현재</span>
+                        </div>
+                        <h3 class="serif-title text-2xl text-black mb-3">오케스트라 활동</h3>
+                        <p class="text-zinc-600 text-xs md:text-sm leading-relaxed text-justify">
+                            작년까지는 긴밀히 협력하며 리듬의 맥박을 짚던 타악기 파트의 팀파니 주자로 임하였고, 현재는 오케스트라 전체의 비트와 흐름을 묵묵하면서도 폭발력 있게 이끌어가는 세트드럼(Set Drum) 주자로 굳건히 대활약하고 있습니다. 소통 속에서 완벽한 비트 일치를 만들어내며 협업의 가치를 익힙니다.
+                        </p>
+                    </div>
+                    <div class="mt-6 pt-3 border-t border-mb-grey85 text-xs text-zinc-400 font-mono">
+                        타악기 핵심 리듬 주도
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 문의 및 채널 안내 섹션 (불필요한 문의 폼을 완전히 제거하고 수려하게 리빌딩) -->
+    <section id="contact" class="max-w-[86vw] mx-auto py-16 md:py-24">
+        <div class="border border-mb-grey85 bg-zinc-50 p-8 md:p-16 flex flex-col md:flex-row justify-between items-center gap-8 rounded-none">
+            <div class="space-y-4 max-w-xl">
+                <span class="text-mb-blue eyebrow-lowercase block">communication / channel</span>
+                <h2 class="serif-title text-3xl text-black font-light">비즈니스 문의 & 대화 채널</h2>
+                <p class="text-zinc-600 leading-relaxed text-sm text-justify">
+                    커넥스네트웍스와의 마케팅 협력 제안 혹은 가치와 리더십에 관한 생각 공유 등 어떤 대화라도 환영합니다. 아래 공식 채널을 통해 언제든 연락해 주시기 바랍니다.
+                </p>
+            </div>
+
+            <!-- 깔끔하고 보안성 높은 Direct Contact Box -->
+            <div class="w-full md:w-auto bg-white border border-mb-grey80 p-8 space-y-4 min-w-[280px] md:min-w-[340px] rounded-none text-left">
+                <h4 class="text-xs font-mono text-zinc-400 uppercase tracking-wider">공식 다이렉트 채널</h4>
+                <div class="h-px bg-zinc-200 my-2"></div>
+                <div class="space-y-4">
+                    <a href="mailto:wyjang5@nate.com" class="flex items-center space-x-3 text-mb-blue hover:underline text-sm font-mono transition-all">
+                        <i class="fa-regular fa-envelope text-base w-5 text-center"></i>
+                        <span>wyjang5@nate.com</span>
+                    </a>
+                    <div class="flex items-center space-x-3 text-zinc-700 text-sm font-mono">
+                        <i class="fa-brands fa-github text-base w-5 text-center"></i>
+                        <span>github.com/wyjang5</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 푸터 -->
+    <footer class="border-t border-mb-grey85 py-12 bg-white">
+        <div class="max-w-[86vw] mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="flex items-center space-x-3">
+                <div class="w-6 h-6 flex items-center justify-center border border-black rounded-none text-[10px] font-serif italic">W</div>
+                <span class="text-xs font-semibold uppercase tracking-widest text-black font-serif">JANG WOO YOUNG</span>
+            </div>
+            <p class="text-[11px] text-mb-grey55 font-mono text-center md:text-right">
+                © 2026 JANG WOO YOUNG. All Rights Reserved.
+            </p>
+        </div>
+    </footer>
+
+    <!-- 상호작용 자바스크립트 소스코드 -->
+    <script>
+        // 1. 초기 기동 바인딩
+        window.onload = function() {
+            initCanvas();
+        };
+
+        // 2. 히어로 블랙 밴드 라인 애니메이션 (배경용 라인 연결 효과만 간소하게 활성 유지)
+        let canvas, ctx;
+        let points = [];
+        const numPoints = 20;
+        let mouse = { x: null, y: null };
+
+        function initCanvas() {
+            canvas = document.getElementById('heroCanvas');
+            ctx = canvas.getContext('2d');
+            
+            resizeCanvas();
+            window.addEventListener('resize', resizeCanvas);
+            
+            const parent = canvas.parentElement;
+            parent.addEventListener('mousemove', function(e) {
+                const rect = parent.getBoundingClientRect();
+                mouse.x = e.clientX - rect.left;
+                mouse.y = e.clientY - rect.top;
+            });
+            parent.addEventListener('mouseleave', function() {
+                mouse.x = null;
+                mouse.y = null;
+            });
+
+            for (let i = 0; i < numPoints; i++) {
+                points.push({
+                    x: Math.random() * canvas.width,
+                    y: Math.random() * canvas.height,
+                    vx: (Math.random() - 0.5) * 0.3,
+                    vy: (Math.random() - 0.5) * 0.3,
+                    radius: Math.random() * 1.5 + 1
+                });
+            }
+
+            animateCanvas();
+        }
+
+        function resizeCanvas() {
+            if (canvas) {
+                canvas.width = canvas.parentElement.offsetWidth;
+                canvas.height = canvas.parentElement.offsetHeight;
+            }
+        }
+
+        function animateCanvas() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            
+            for (let i = 0; i < numPoints; i++) {
+                let p = points[i];
+                p.x += p.vx;
+                p.y += p.vy;
+
+                if (p.x < 0 || p.x > canvas.width) p.vx *= -1;
+                if (p.y < 0 || p.y > canvas.height) p.vy *= -1;
+
+                ctx.beginPath();
+                ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
+                ctx.fillStyle = '#0260ab'; 
+                ctx.fill();
+
+                for (let j = i + 1; j < numPoints; j++) {
+                    let p2 = points[j];
+                    let dist = Math.hypot(p.x - p2.x, p.y - p2.y);
+                    if (dist < 130) {
+                        ctx.beginPath();
+                        ctx.moveTo(p.x, p.y);
+                        ctx.lineTo(p2.x, p2.y);
+                        ctx.strokeStyle = `rgba(2, 96, 171, ${0.12 * (1 - dist/130)})`;
+                        ctx.lineWidth = 0.7;
+                        ctx.stroke();
+                    }
+                }
+            }
+            requestAnimationFrame(animateCanvas);
+        }
+    </script>
+</body>
+</html>
