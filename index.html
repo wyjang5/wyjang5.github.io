@@ -3,38 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JANG WOO YOUNG — 공식 개인 브랜드 홈</title>
+    <title>JANG WOO YOUNG — CEO & Brand Director</title>
+    
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,300;1,8..60,400&display=swap" rel="stylesheet">
+    
+    <!-- Fonts: Pretendard (Korean Standard) & Source Serif -->
+    <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     fontFamily: {
+                        sans: ['Pretendard', 'sans-serif'], // Changed to Pretendard for premium look
                         serif: ['"Source Serif 4"', 'Georgia', 'serif'],
-                        sans: ['Inter', 'sans-serif'],
+                        mono: ['"JetBrains Mono"', 'monospace'], // Better coding font
                     },
                     colors: {
-                        mb: {
-                            blue: '#0260ab',
-                            blueActive: '#014880',
-                            blueButton: '#0078d6',
-                            grey05: '#f9f9f9',
-                            grey10: '#141414',
-                            grey55: '#919191',
-                            grey60: '#9f9f9f',
-                            grey80: '#dbdbdb',
-                            grey85: '#e8e8e8',
+                        brand: {
+                            blue: '#0056b3',
+                            light: '#eef2f6',
+                            dark: '#0a0f1a',
+                            accent: '#3b82f6'
                         }
                     },
-                    spacing: {
-                        'grid-gutter': '2.5rem',
+                    animation: {
+                        'fade-in-up': 'fadeInUp 0.8s ease-out forwards',
                     },
-                    width: {
-                        'grid-content': '86vw',
+                    keyframes: {
+                        fadeInUp: {
+                            '0%': { opacity: '0', transform: 'translateY(20px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        }
                     }
                 }
             }
@@ -42,368 +48,340 @@
     </script>
     <style>
         body {
-            background-color: #ffffff;
-            color: #000000;
-            font-family: 'Inter', sans-serif;
-            font-size: 14px;
-            line-height: 22px;
-            font-weight: 400;
-            word-break: keep-all;
+            background-color: #fcfcfc;
+            color: #1a1a1a;
+            word-break: keep-all; /* Prevents awkward Korean line breaks */
+            -webkit-font-smoothing: antialiased;
         }
-        .serif-title {
-            font-family: "Source Serif 4", Georgia, serif;
-            font-weight: 300;
-            letter-spacing: -0.01em;
+        
+        /* Smooth Scrollbar */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #f1f1f1; }
+        ::-webkit-scrollbar-thumb { background: #c1c1c1; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #a8a8a8; }
+
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(0,0,0,0.05);
         }
-        .eyebrow-lowercase {
-            font-family: 'Inter', sans-serif;
-            font-size: 11px;
-            letter-spacing: 0.05em;
-            text-transform: uppercase;
-        }
-        ::-webkit-scrollbar {
-            width: 5px;
-        }
-        ::-webkit-scrollbar-track {
-            background: #ffffff;
-        }
-        ::-webkit-scrollbar-thumb {
-            background: #000000;
+
+        .text-gradient {
+            background: linear-gradient(135deg, #000000 0%, #434343 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
     </style>
 </head>
-<body class="bg-white text-black antialiased selection:bg-mb-blue selection:text-white">
+<body class="antialiased selection:bg-brand-accent selection:text-white">
 
-    <nav class="bg-black text-white h-14 px-4 md:px-12 flex items-center justify-between sticky top-0 z-50 border-b border-zinc-900">
-        <div class="flex items-center space-x-3">
-            <div class="w-6 h-6 flex items-center justify-center border border-white rounded-none">
-                <span class="text-[10px] font-serif italic tracking-tighter">W</span>
+    <nav class="glass-nav h-16 px-6 md:px-12 flex items-center justify-between sticky top-0 z-50 transition-all duration-300">
+        <div class="flex items-center space-x-3 cursor-pointer" onclick="window.scrollTo(0,0)">
+            <div class="w-8 h-8 bg-black text-white flex items-center justify-center rounded-lg shadow-md">
+                <span class="text-sm font-serif italic pr-0.5">W</span>
             </div>
-            <span class="text-xs font-semibold tracking-widest font-serif uppercase">JANG WOO YOUNG</span>
+            <span class="text-sm font-bold tracking-widest text-black">JANG WOO YOUNG</span>
         </div>
-        <div class="flex items-center space-x-6 md:space-x-8 text-xs font-light text-zinc-400">
-            <a href="#about" class="hover:text-white transition-colors duration-200">자기소개</a>
-            <a href="#business" class="hover:text-white transition-colors duration-200">비즈니스 & 보안</a>
-            <a href="#activities" class="hover:text-white transition-colors duration-200">주요 활동</a>
-            <a href="#contact" class="hover:text-white transition-colors duration-200">연락처</a>
+        <div class="hidden md:flex items-center space-x-8 text-sm font-medium text-gray-500">
+            <a href="#about" class="hover:text-black transition-colors duration-200">About</a>
+            <a href="#business" class="hover:text-black transition-colors duration-200">Business & Security</a>
+            <a href="#activities" class="hover:text-black transition-colors duration-200">Activities</a>
+            <a href="#contact" class="px-4 py-2 bg-black text-white rounded-full hover:bg-gray-800 transition-colors">Contact</a>
         </div>
     </nav>
 
-    <header class="bg-black text-white relative py-12 md:py-24 overflow-hidden border-b border-zinc-900">
-        <div class="max-w-[86vw] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 items-center relative z-10">
-            <div class="lg:col-span-7 space-y-6">
-                <div class="flex items-center space-x-2">
-                    <span class="bg-mb-blue text-[10px] text-white px-2 py-0.5 tracking-widest font-mono uppercase">CEO & 브랜드 디렉터</span>
-                    <span class="h-px w-8 bg-zinc-700"></span>
-                    <span class="text-xs text-zinc-500 font-mono">설립일. 2025</span>
+    <header class="relative pt-24 pb-32 md:pt-32 md:pb-40 overflow-hidden bg-brand-dark text-white">
+        <!-- Background Accent -->
+        <div class="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-bl from-blue-900/20 to-transparent pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-6 md:px-12 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center relative z-10">
+            
+            <div class="space-y-8 animate-fade-in-up">
+                <div class="inline-flex items-center space-x-3 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full border border-white/10">
+                    <span class="w-2 h-2 rounded-full bg-blue-400 animate-pulse"></span>
+                    <span class="text-xs font-mono tracking-wider text-blue-100">CEO & BRAND DIRECTOR</span>
                 </div>
-                <h1 class="serif-title text-3xl md:text-5xl lg:text-6xl font-light leading-tight text-white">
-                    JANG WOO YOUNG<br>
-                    <span class="text-zinc-400 italic">가치를 실현으로 연결하다.</span>
+                
+                <h1 class="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight tracking-tight">
+                    가치를 실현으로<br>
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-emerald-400">연결하다.</span>
                 </h1>
-                <p class="text-zinc-400 font-sans text-sm md:text-base max-w-xl leading-relaxed text-justify">
-                    안녕하십니까, 장우영입니다. 저는 마케팅 기업 <strong class="text-white">CONX Networks(커넥스네트웍스)</strong>의 창업자이자 대표입니다. 탄탄한 정보보안 지식과 협동 능력을 바탕으로, 신뢰할 수 있는 데이터 구조 위에서 영감 가득한 브랜드 마케팅 솔루션을 설계하고 있습니다.
+                
+                <p class="text-gray-400 text-lg md:text-xl font-light leading-relaxed max-w-lg">
+                    마케팅 기업 <strong class="text-white font-medium">CONX Networks</strong>의 창업자 장우영입니다. 
+                    신뢰할 수 있는 데이터 구조 위에서 영감 가득한 브랜드 솔루션을 설계합니다.
                 </p>
-                <div class="flex flex-wrap gap-2 pt-2">
-                    <span class="bg-zinc-900 text-zinc-400 text-xs px-3 py-1.5 border border-zinc-800 font-mono">#장우영_공식홈</span>
-                    <span class="bg-zinc-900 text-zinc-400 text-xs px-3 py-1.5 border border-zinc-800 font-mono">#CONX_Networks_대표</span>
-                    <span class="bg-zinc-900 text-zinc-400 text-xs px-3 py-1.5 border border-zinc-800 font-mono">#정보보안_전문가</span>
+                
+                <div class="flex flex-wrap gap-3 pt-4">
+                    <span class="bg-white/5 hover:bg-white/10 transition text-gray-300 text-sm px-4 py-2 rounded-lg border border-white/10 font-mono">#CONX_Networks</span>
+                    <span class="bg-white/5 hover:bg-white/10 transition text-gray-300 text-sm px-4 py-2 rounded-lg border border-white/10 font-mono">#Security_Expert</span>
+                    <span class="bg-white/5 hover:bg-white/10 transition text-gray-300 text-sm px-4 py-2 rounded-lg border border-white/10 font-mono">#Local_Marketing</span>
                 </div>
             </div>
             
-            <div class="lg:col-span-5 flex flex-col justify-center items-center w-full">
-                <div class="w-full bg-zinc-950 border border-zinc-800 rounded-none p-5 relative overflow-hidden text-left">
-                    <div class="flex justify-between items-center border-b border-zinc-900 pb-3 mb-4">
-                        <div class="flex items-center space-x-2">
-                            <span class="w-2.5 h-2.5 bg-mb-blue animate-pulse rounded-full"></span>
-                            <span class="font-mono text-[11px] text-zinc-400 tracking-wider">CONX LOCAL SCANNER</span>
+            <!-- Restyled Canvas Section -->
+            <div class="w-full flex justify-center lg:justify-end animate-fade-in-up" style="animation-delay: 0.2s;">
+                <div class="w-full max-w-md bg-[#0d1321] rounded-2xl shadow-2xl border border-gray-800 overflow-hidden relative group">
+                    <!-- Mac-like Header -->
+                    <div class="flex justify-between items-center bg-[#151e32] px-4 py-3 border-b border-gray-800">
+                        <div class="flex space-x-2">
+                            <div class="w-3 h-3 rounded-full bg-red-500/80"></div>
+                            <div class="w-3 h-3 rounded-full bg-yellow-500/80"></div>
+                            <div class="w-3 h-3 rounded-full bg-green-500/80"></div>
                         </div>
-                        <span class="font-mono text-[10px] text-emerald-400" id="scanStatusText">로컬 진단 분석기 v2.0</span>
+                        <span class="font-mono text-[10px] text-gray-400 tracking-wider">CONX_LOCAL_SCANNER_v2.0</span>
                     </div>
 
-                    <div class="relative w-full h-56 bg-black border border-zinc-900 overflow-hidden cursor-crosshair">
+                    <div class="relative w-full h-64 bg-[#0a0f1a] cursor-crosshair">
                         <canvas id="conxScannerCanvas" class="w-full h-full block"></canvas>
-                        <div class="absolute top-2 right-2 bg-black/80 px-2 py-1 border border-zinc-800 pointer-events-none">
-                            <span class="font-mono text-[9px] text-zinc-400">클릭: 마케팅 최적화</span>
-                        </div>
-                    </div>
-
-                    <div class="grid grid-cols-2 gap-4 mt-4 border-t border-zinc-900 pt-3 text-center font-mono">
-                        <div>
-                            <p class="text-[9px] text-zinc-500 uppercase">EXPECTED LOCAL REACH</p>
-                            <p class="text-base text-white font-light mt-0.5" id="optPercentage">최적화 성공률: 33%</p>
-                        </div>
-                        <div>
-                            <p class="text-[9px] text-zinc-500 uppercase">SECURITY PROTOCOL</p>
-                            <p class="text-base text-mb-blue font-light mt-0.5">SSL ENCRYPTED</p>
+                        
+                        <!-- Overlay UI -->
+                        <div class="absolute inset-0 pointer-events-none p-4 flex flex-col justify-between">
+                            <div class="self-end bg-black/60 backdrop-blur px-2 py-1 rounded text-[10px] text-gray-400 font-mono border border-gray-800">
+                                TARGET: 마케팅 최적화 (클릭)
+                            </div>
+                            <div class="flex justify-between items-end">
+                                <div>
+                                    <p class="text-[10px] text-blue-400 font-mono mb-1">OPT_RATE</p>
+                                    <p class="text-xl text-white font-bold font-mono" id="optPercentage">33%</p>
+                                </div>
+                                <div class="text-right">
+                                    <p class="text-[10px] text-emerald-400 font-mono mb-1">STATUS</p>
+                                    <p class="text-xs text-white font-mono">SSL_SECURED</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <p class="text-[10px] text-zinc-500 font-sans tracking-wide text-center mt-2 w-full leading-normal px-2">
-                    * 위 인터랙티브 스캐너는 로컬 점포 노출 최적화 과정을 시각화한 CONX 전용 진단 캔버스입니다.
-                </p>
             </div>
+
         </div>
     </header>
 
-    <section id="about" class="max-w-[86vw] mx-auto py-12 md:py-20 border-b border-mb-grey85">
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12">
-            <div class="lg:col-span-4 space-y-6">
-                <div>
-                    <span class="text-mb-grey60 eyebrow-lowercase block mb-2">editorial / overview</span>
-                    <h2 class="serif-title text-3xl text-black">핵심 요약</h2>
-                    <p class="text-zinc-500 mt-2 text-sm leading-relaxed">
-                        철저한 기술적 신뢰를 바탕으로 정직한 데이터를 수집하고, 독창적인 시각으로 진정한 가치를 전달하고자 합니다.
+    <section id="about" class="py-24 md:py-32 bg-white">
+        <div class="max-w-7xl mx-auto px-6 md:px-12">
+            <div class="flex flex-col md:flex-row gap-16 items-start">
+                
+                <div class="w-full md:w-1/3 space-y-6 sticky top-24">
+                    <span class="text-brand-accent font-bold tracking-wider text-sm uppercase">About Me</span>
+                    <h2 class="text-4xl font-bold text-gradient">철학과 가치</h2>
+                    <p class="text-gray-500 leading-relaxed text-lg">
+                        강한 주도성과 평정심으로 행동하고 가치를 창출합니다.
                     </p>
                 </div>
                 
-                <ul class="space-y-3 text-xs font-mono border-t border-mb-grey85 pt-6">
-                    <li class="flex justify-between py-1.5 border-b border-mb-grey85">
-                        <span class="text-mb-grey55">활동 분야</span>
-                        <span class="font-medium text-black">마케팅 / 정보보안</span>
-                    </li>
-                    <li class="flex justify-between py-1.5 border-b border-mb-grey85">
-                        <span class="text-mb-grey55">현재 역할</span>
-                        <span class="font-medium text-black">커넥스네트웍스 대표</span>
-                    </li>
-                </ul>
-            </div>
+                <div class="w-full md:w-2/3 space-y-12">
+                    <div class="bg-gray-50 rounded-3xl p-8 md:p-12 border border-gray-100">
+                        <i class="fa-solid fa-quote-left text-4xl text-gray-300 mb-6"></i>
+                        <h3 class="text-2xl md:text-3xl font-bold text-gray-900 leading-snug mb-6">
+                            "시련은 있어도 실패는 없다."
+                        </h3>
+                        <div class="space-y-4 text-gray-600 text-lg leading-relaxed">
+                            <p>
+                                어려운 환경 속에서도 흔들리지 않는 굳건한 평정심을 기르며 스스로를 단단히 책임지는 태도를 익혔습니다. 주어진 목표를 주도적으로 매듭짓고, 한발 앞선 실행력으로 문제를 해결해 나가는 것이 저의 핵심 강점입니다.
+                            </p>
+                            <p>
+                                <strong class="text-black font-semibold">CONX Networks</strong>를 설립해 현장의 실무 흐름을 치열하게 익히고 있습니다. 데이터가 오가는 전 과정을 안전하게 다룰 수 있는 정보보안 지식을 접목하여 대중의 마음을 움직이는 깔끔하고 세련된 마케팅 기획을 함께 설계합니다.
+                            </p>
+                        </div>
+                    </div>
+                </div>
 
-            <div class="lg:col-span-8 flex flex-col justify-center space-y-6">
-                <span class="text-mb-blue eyebrow-lowercase block">philosophy / core value</span>
-                <h3 class="serif-title text-2xl md:text-3xl text-black leading-snug">
-                    "시련은 있어도 실패는 없다."<br>
-                    강한 주도성과 평정심으로 행동하고 가치를 창출합니다.
-                </h3>
-                <p class="text-zinc-700 leading-relaxed text-sm md:text-base text-justify">
-                    어려운 환경 속에서도 흔들리지 않는 굳건한 평정심을 기르며 스스로를 단단히 책임지는 태도를 익혔습니다. 주어진 목표를 주도적으로 매듭짓고, 한발 앞선 실행력으로 문제를 해결해 나가는 것이 저의 핵심 강점입니다.
-                </p>
-                <p class="text-zinc-700 leading-relaxed text-sm md:text-base text-justify">
-                    마케팅 기업 <strong class="text-black font-semibold">CONX Networks(커넥스네트웍스)</strong>를 설립해 현장의 실무 흐름을 치열하게 익히고 있습니다. 데이터가 오가는 전 과정을 안전하게 다룰 수 있는 정보보안 지식을 접목하고, 대중의 마음을 움직이는 깔끔하고 세련된 마케팅 기획을 함께 설계하고 있습니다.
-                </p>
             </div>
         </div>
     </section>
 
-    <section id="business" class="max-w-[86vw] mx-auto py-12 md:py-20 border-b border-mb-grey85">
-        <div class="space-y-12">
-            <div class="flex flex-col md:flex-row md:items-end justify-between border-b border-mb-grey85 pb-6">
-                <div>
-                    <span class="text-mb-grey60 eyebrow-lowercase block mb-2">business & security / record</span>
-                    <h2 class="serif-title text-3xl md:text-4xl text-black font-light">비즈니스 및 정보보안 연구</h2>
-                </div>
-                <p class="text-zinc-500 text-xs font-mono mt-2 md:mt-0">CONX Networks 운영 및 보안 연구 이력</p>
+    <section id="business" class="py-24 md:py-32 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-6 md:px-12 space-y-16">
+            
+            <div class="text-center max-w-2xl mx-auto space-y-4">
+                <span class="text-brand-accent font-bold tracking-wider text-sm uppercase">Business & Security</span>
+                <h2 class="text-4xl font-bold text-gray-900">비즈니스 및 정보보안 연구</h2>
+                <p class="text-gray-500 text-lg">마케팅의 확산력과 정보보안의 단단함을 결합합니다.</p>
             </div>
 
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 border border-mb-grey85 p-6 md:p-10 hover:border-black transition-colors duration-300 rounded-none">
-                <div class="lg:col-span-7 space-y-6">
-                    <div class="flex items-center space-x-2">
-                        <span class="text-xs bg-zinc-950 text-white px-2.5 py-1 font-mono tracking-wider uppercase rounded-none">비즈니스 브랜드</span>
-                        <a href="https://nssoft.cloud/" target="_blank" class="text-xs text-mb-blue hover:underline font-mono flex items-center space-x-1">
+            <!-- Main Business Card -->
+            <div class="bg-white rounded-3xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-gray-100 overflow-hidden flex flex-col lg:flex-row transition-transform duration-300 hover:-translate-y-1">
+                <div class="lg:w-3/5 p-8 md:p-12 space-y-8">
+                    <div class="flex items-center gap-4">
+                        <span class="bg-blue-100 text-blue-700 text-xs font-bold px-3 py-1.5 rounded-full">주요 비즈니스</span>
+                        <a href="https://nssoft.cloud/" target="_blank" class="text-sm text-gray-500 hover:text-brand-accent transition flex items-center gap-1 group">
                             <span>nssoft.cloud</span>
-                            <i class="fa-solid fa-arrow-up-right-from-square text-[9px]"></i>
+                            <i class="fa-solid fa-arrow-up-right-from-square text-[10px] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform"></i>
                         </a>
                     </div>
-                    <h3 class="serif-title text-2xl md:text-3xl text-black">CONX 마케팅 (CONX Marketing)</h3>
-                    <p class="text-zinc-600 text-sm leading-relaxed text-justify">
-                        CONX Networks가 운영하는 'CONX 마케팅'은 지역 소상공인과 중소기업의 성장을 밀착 지원하는 정밀 맞춤형 로컬 마케팅 서비스입니다. 
-                        철저한 분석 데이터를 근간으로 한 상권 파악, 네이버 플레이스 및 지도 최적화, 타깃 마케팅을 통해 점포 가치를 직관적이고 설득력 있게 확장합니다.
+                    
+                    <h3 class="text-3xl font-bold text-gray-900">커넥스마케팅 (CONX Marketing)</h3>
+                    <p class="text-gray-600 text-lg leading-relaxed">
+                        지역 소상공인과 중소기업의 성장을 밀착 지원하는 정밀 맞춤형 로컬 마케팅 서비스입니다. 
+                        철저한 분석 데이터를 근간으로 한 상권 파악, 네이버 지도 최적화, 타깃 마케팅을 통해 점포 가치를 확장합니다.
                     </p>
-                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-2">
-                        <div class="border-l-2 border-mb-blue pl-3">
-                            <h4 class="font-sans font-semibold text-xs text-black">네이버 지도 최적화</h4>
-                            <p class="text-zinc-500 text-[11px] mt-0.5">상단 노출 및 유입 동선 관리</p>
+                    
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 pt-4">
+                        <div class="bg-gray-50 p-5 rounded-2xl border border-gray-100">
+                            <i class="fa-solid fa-map-location-dot text-brand-accent text-xl mb-3"></i>
+                            <h4 class="font-bold text-gray-900 mb-1">지도 최적화</h4>
+                            <p class="text-gray-500 text-sm">상단 노출 및 유입 동선 관리</p>
                         </div>
-                        <div class="border-l-2 border-mb-blue pl-3">
-                            <h4 class="font-sans font-semibold text-xs text-black">로컬 맞춤 홍보물</h4>
-                            <p class="text-zinc-500 text-[11px] mt-0.5">고감도 브랜딩 콘텐츠 제작</p>
+                        <div class="bg-gray-50 p-5 rounded-2xl border border-gray-100">
+                            <i class="fa-solid fa-pen-nib text-brand-accent text-xl mb-3"></i>
+                            <h4 class="font-bold text-gray-900 mb-1">브랜딩 기획</h4>
+                            <p class="text-gray-500 text-sm">고감도 홍보물 콘텐츠 제작</p>
                         </div>
-                        <div class="border-l-2 border-mb-blue pl-3">
-                            <h4 class="font-sans font-semibold text-xs text-black">지역 주민 타깃팅</h4>
-                            <p class="text-zinc-500 text-[11px] mt-0.5">고효율 타깃 집중형 광고</p>
+                        <div class="bg-gray-50 p-5 rounded-2xl border border-gray-100">
+                            <i class="fa-solid fa-bullseye text-brand-accent text-xl mb-3"></i>
+                            <h4 class="font-bold text-gray-900 mb-1">정밀 타깃팅</h4>
+                            <p class="text-gray-500 text-sm">고효율 지역 주민 타깃 광고</p>
                         </div>
                     </div>
                 </div>
-                <div class="lg:col-span-5 bg-zinc-950 p-6 flex flex-col justify-between text-white relative overflow-hidden min-h-[220px]">
-                    <div class="absolute -right-10 -bottom-10 w-48 h-48 bg-zinc-900 rounded-none opacity-30"></div>
-                    <div>
-                        <h4 class="font-mono text-zinc-500 text-xs uppercase tracking-wider">서비스 연계 아키텍처</h4>
-                        <div class="mt-4 font-mono text-[11px] text-zinc-400 space-y-1.5 leading-normal">
-                            <p class="text-mb-blue"><span class="text-zinc-600">$</span> nssoft --audit-map</p>
-                            <p class="text-emerald-500">> 연천군 검색 노출 빈도 및 위치 점검 완료</p>
-                            <p class="text-zinc-600"><span class="text-zinc-600">$</span> nssoft --inject-local-ad</p>
-                            <p class="text-zinc-400">> 지역 주민 활성 커뮤니티 타깃 지출 최적화</p>
+                
+                <!-- Terminal UI Side -->
+                <div class="lg:w-2/5 bg-[#1e1e1e] p-8 md:p-12 text-gray-300 flex flex-col justify-center relative">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-blue-500/10 rounded-bl-full blur-2xl"></div>
+                    <div class="relative z-10 font-mono text-sm space-y-4">
+                        <p class="text-gray-500 text-xs mb-6">// 서비스 연계 아키텍처 스크립트</p>
+                        
+                        <div class="space-y-2">
+                            <p><span class="text-brand-accent font-bold">root@conx</span><span class="text-white">:~#</span> nssoft --audit-map</p>
+                            <p class="text-emerald-400 pl-4">> [SUCCESS] 지역 검색 노출 빈도 점검 완료</p>
                         </div>
-                    </div>
-                    <div class="text-xs font-serif italic text-zinc-400 mt-4 border-t border-zinc-800 pt-3">
-                        "사장님은 장사에만 집중하도록, 마케팅은 데이터에 기반하여 투명하게 작동합니다."
+                        
+                        <div class="space-y-2 mt-4">
+                            <p><span class="text-brand-accent font-bold">root@conx</span><span class="text-white">:~#</span> nssoft --inject-local-ad</p>
+                            <p class="text-gray-400 pl-4">> 분석 중... 상권 타깃팅 지출 최적화 적용됨</p>
+                        </div>
+
+                        <div class="mt-8 pt-6 border-t border-gray-700/50 italic text-gray-500 font-serif text-sm">
+                            "사장님은 장사에만 집중하도록, 마케팅은 데이터에 기반하여 투명하게 작동합니다."
+                        </div>
                     </div>
                 </div>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div class="border border-mb-grey85 p-6 flex flex-col justify-between hover:border-black transition-colors duration-300 rounded-none">
-                    <div class="space-y-4">
-                        <div class="flex justify-between items-start">
-                            <span class="text-xs text-mb-blue font-mono font-semibold">보안 교육 이력</span>
-                            <span class="text-xs text-zinc-400 font-mono">2025.04 ~ 2025.11</span>
+                <!-- Card 1 -->
+                <div class="bg-white rounded-3xl p-8 border border-gray-100 shadow-sm hover:shadow-lg transition-all duration-300">
+                    <div class="flex justify-between items-center mb-6">
+                        <div class="w-12 h-12 bg-blue-50 rounded-2xl flex items-center justify-center text-blue-600 text-xl">
+                            <i class="fa-solid fa-shield-halved"></i>
                         </div>
-                        <h3 class="serif-title text-2xl text-black">정보보호영재교육원 심화 과정</h3>
-                        <p class="text-zinc-600 text-xs md:text-sm leading-relaxed text-justify">
-                            대학 부설 국가 공인 정보보호영재교육원의 까다로운 선발 과정을 거쳐 보안 교육과정에 진입, 심도 있는 연수를 진행했습니다. 고객 간 암호화 등 핵심적인 보안 분석 기술들을 단단히 습득했습니다.
-                        </p>
+                        <span class="text-xs font-mono text-gray-400 bg-gray-50 px-3 py-1 rounded-full">2025.04 - 11</span>
                     </div>
-                    <div class="mt-6 pt-4 border-t border-mb-grey85 flex justify-between items-center text-xs">
-                        <span class="text-zinc-400 font-mono">서울여자대학교 정보보호교육원</span>
-                        <span class="font-semibold text-zinc-700 uppercase">교육 참여 및 연구 수행</span>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">정보보호영재교육원 심화 과정</h3>
+                    <p class="text-gray-600 leading-relaxed mb-8">
+                        대학 부설 국가 공인 정보보호영재교육원의 선발 과정을 거쳐 심도 있는 연수를 진행했습니다. 고객 데이터 암호화 등 핵심적인 보안 분석 기술을 습득하여 서비스 신뢰도를 높입니다.
+                    </p>
+                    <div class="pt-4 border-t border-gray-100 flex justify-between items-center">
+                        <span class="text-sm text-gray-500">서울여자대학교 정보보호교육원</span>
                     </div>
                 </div>
 
-                <div class="border border-mb-grey85 p-6 flex flex-col justify-between hover:border-black transition-colors duration-300 rounded-none">
-                    <div class="space-y-4">
-                        <div class="flex justify-between items-start">
-                            <span class="text-xs text-rose-600 font-mono font-semibold">전국 경진대회 수상</span>
-                            <span class="text-xs text-zinc-400 font-mono">2025.11.22</span>
+                <!-- Card 2 -->
+                <div class="bg-white rounded-3xl p-8 border border-gray-100 shadow-sm hover:shadow-lg transition-all duration-300">
+                    <div class="flex justify-between items-center mb-6">
+                        <div class="w-12 h-12 bg-rose-50 rounded-2xl flex items-center justify-center text-rose-600 text-xl">
+                            <i class="fa-solid fa-trophy"></i>
                         </div>
-                        <h3 class="serif-title text-2xl text-black">제11회 전국 정보보안 경진대회 2관왕</h3>
-                        <p class="text-zinc-600 text-xs md:text-sm leading-relaxed text-justify">
-                            공인 교육원 연합 전국 정보보안 경진대회에 출전하여 단체전 우수상 및 개인전 장려상을 동시에 달성했습니다. 취약점 탐색 역량과 보안 위협 대처력을 인정받았으며, 이는 CONX Networks의 디지털 서비스를 위협으로부터 안전하게 지키는 강력한 토대가 됩니다.
-                        </p>
+                        <span class="text-xs font-mono text-gray-400 bg-gray-50 px-3 py-1 rounded-full">2025.11</span>
                     </div>
-                    <div class="mt-6 pt-4 border-t border-mb-grey85 flex justify-between items-center text-xs">
-                        <span class="text-zinc-400 font-mono">정보보호영재교육원 협의회</span>
-                        <span class="font-semibold text-rose-600 uppercase">2관왕 달성</span>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">전국 정보보안 경진대회 2관왕</h3>
+                    <p class="text-gray-600 leading-relaxed mb-8">
+                        단체전 우수상 및 개인전 장려상을 동시 달성했습니다. 취약점 탐색 역량과 보안 위협 대처력을 통해 CONX Networks의 디지털 인프라를 안전하게 수호합니다.
+                    </p>
+                    <div class="pt-4 border-t border-gray-100 flex justify-between items-center">
+                        <span class="text-sm font-bold text-rose-600">정보보호영재교육원 협의회 주관</span>
                     </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="activities" class="py-24 md:py-32 bg-white">
+        <div class="max-w-7xl mx-auto px-6 md:px-12">
+            <div class="text-center max-w-2xl mx-auto space-y-4 mb-16">
+                <span class="text-brand-accent font-bold tracking-wider text-sm uppercase">Activities & Leadership</span>
+                <h2 class="text-4xl font-bold text-gray-900">주요 활동</h2>
+                <p class="text-gray-500 text-lg">소통하고 조율하며 함께 완성해 나가는 가치</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Activity 1 -->
+                <div class="group p-8 rounded-3xl bg-gray-50 border border-gray-100 hover:bg-black hover:text-white transition-all duration-500">
+                    <div class="w-12 h-12 bg-white group-hover:bg-gray-800 rounded-xl flex items-center justify-center text-gray-900 group-hover:text-white transition-colors mb-6 shadow-sm">
+                        <i class="fa-solid fa-users text-lg"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">학생자치회 회장</h3>
+                    <p class="text-sm text-gray-500 group-hover:text-gray-400 leading-relaxed mb-6">
+                        다양한 생각과 요구를 대표하여 합의를 도출해왔습니다. 사람들의 소리에 귀 기울이고 갈등을 슬기롭게 푸는 경험은, 만족스러운 파트너십 전략을 수립하는 밑거름입니다.
+                    </p>
+                    <span class="text-xs font-mono text-gray-400">2026.03 ~ 현재</span>
+                </div>
+
+                <!-- Activity 2 -->
+                <div class="group p-8 rounded-3xl bg-gray-50 border border-gray-100 hover:bg-black hover:text-white transition-all duration-500">
+                    <div class="w-12 h-12 bg-white group-hover:bg-gray-800 rounded-xl flex items-center justify-center text-gray-900 group-hover:text-white transition-colors mb-6 shadow-sm">
+                        <i class="fa-solid fa-microphone-lines text-lg"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">방송부 부장</h3>
+                    <p class="text-sm text-gray-500 group-hover:text-gray-400 leading-relaxed mb-6">
+                        전문 하드웨어 설비를 책임지며 안정적으로 방송을 총괄합니다. 마케팅 콘텐츠의 핵심인 미디어를 이해하고 돌발 상황에 대처하는 순발력을 길렀습니다.
+                    </p>
+                    <span class="text-xs font-mono text-gray-400">2024.04 ~ 현재</span>
+                </div>
+
+                <!-- Activity 3 -->
+                <div class="group p-8 rounded-3xl bg-gray-50 border border-gray-100 hover:bg-black hover:text-white transition-all duration-500">
+                    <div class="w-12 h-12 bg-white group-hover:bg-gray-800 rounded-xl flex items-center justify-center text-gray-900 group-hover:text-white transition-colors mb-6 shadow-sm">
+                        <i class="fa-solid fa-drum text-lg"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">오케스트라 세트드럼</h3>
+                    <p class="text-sm text-gray-500 group-hover:text-gray-400 leading-relaxed mb-6">
+                        팀파니 주자를 거쳐 현재는 전체의 비트와 흐름을 묵묵하면서도 폭발력 있게 이끌어가는 세트드럼 주자로 활약하며 완벽한 협업의 가치를 배웁니다.
+                    </p>
+                    <span class="text-xs font-mono text-gray-400">2024.03 ~ 현재</span>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="bg-black text-white py-16 md:py-24 border-y border-zinc-900 relative overflow-hidden">
-        <div class="max-w-[86vw] mx-auto flex flex-col md:flex-row justify-between items-start md:items-center gap-8 relative z-10">
-            <div class="space-y-4">
-                <span class="text-xs font-mono tracking-widest text-mb-blue uppercase">Brand Philosophy</span>
-                <h2 class="serif-title text-3xl md:text-5xl font-light leading-tight">
-                    CONX NETWORKS.<br>
-                    <span class="italic font-normal text-zinc-300">ENGAGING EXTRAORDINARY.</span>
-                </h2>
-                <p class="text-zinc-400 text-sm max-w-xl leading-relaxed text-justify">
-                    우리는 단순한 광고가 아닌, 진정성 있는 브랜드의 울림을 전합니다. 탄탄한 보안 기술로 소중한 정보를 지키고, 아름다운 기획력을 통해 대중의 마음에 오래 기억되는 메시지를 만듭니다.
-                </p>
-            </div>
-            <div class="w-full md:w-auto">
-                <div class="border border-zinc-800 p-6 bg-zinc-950 text-left max-w-xs rounded-none">
-                    <h4 class="text-xs font-mono text-zinc-500 uppercase tracking-widest">회사 신념</h4>
-                    <p class="serif-title text-base text-zinc-300 mt-2">"경계를 허무는 무한한 가능성"</p>
-                    <div class="h-px bg-zinc-800 my-4"></div>
-                    <span class="text-xs text-zinc-400">대표 장우영</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="activities" class="max-w-[86vw] mx-auto py-12 md:py-20 border-b border-mb-grey85">
-        <div class="space-y-12">
-            <div class="flex flex-col md:flex-row md:items-end justify-between border-b border-mb-grey85 pb-6">
-                <div>
-                    <span class="text-mb-grey60 eyebrow-lowercase block mb-2">activities & leadership / balance</span>
-                    <h2 class="serif-title text-3xl md:text-4xl text-black font-light">주요 활동 및 리더십</h2>
-                </div>
-                <p class="text-zinc-500 text-xs font-mono mt-2 md:mt-0">함께 이끌고 소통하며 완성해 나간 가치 있는 발자취</p>
-            </div>
-
-            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
-                <div class="border border-mb-grey85 p-6 hover:border-black transition-colors duration-300 flex flex-col justify-between rounded-none">
-                    <div>
-                        <div class="flex justify-between items-center mb-4">
-                            <span class="bg-zinc-100 text-zinc-800 text-[10px] px-2 py-0.5 font-mono rounded-none">리더십</span>
-                            <span class="text-xs text-zinc-400 font-mono">2026.03 ~ 현재</span>
-                        </div>
-                        <h3 class="serif-title text-2xl text-black mb-3">학생자치회 회장</h3>
-                        <p class="text-zinc-600 text-xs md:text-sm leading-relaxed text-justify">
-                            다양한 생각과 요구를 가진 많은 이들을 대표하여 합의를 도출하고 조율하는 역할을 해왔습니다. 사람들의 소리에 먼저 귀 기울이고 갈등을 슬기롭게 풀어나갔던 경험은, 고객의 소리를 분석하고 만족스러운 파트너십 전략을 수립하는 데 단단한 거름이 됩니다.
-                        </p>
-                    </div>
-                    <div class="mt-6 pt-3 border-t border-mb-grey85 text-xs text-zinc-400 font-mono">
-                        조직 소통 및 조율 역량
-                    </div>
-                </div>
-
-                <div class="border border-mb-grey85 p-6 hover:border-black transition-colors duration-300 flex flex-col justify-between rounded-none">
-                    <div>
-                        <div class="flex justify-between items-center mb-4">
-                            <span class="bg-zinc-100 text-zinc-800 text-[10px] px-2 py-0.5 font-mono rounded-none">방송부</span>
-                            <span class="text-xs text-zinc-400 font-mono">2024.04 ~ 현재</span>
-                        </div>
-                        <h3 class="serif-title text-2xl text-black mb-3">방송부 부장</h3>
-                        <p class="text-zinc-600 text-xs md:text-sm leading-relaxed text-justify">
-                            오디오 믹서 세팅, 마이크 미세 조정 등 전문적인 하드웨어 설비를 책임지며 교내외 방송을 안정적으로 총괄하고 있습니다. 마케팅 콘텐츠의 핵심인 소리와 영상 기획을 근본적으로 이해하고, 돌발 상황에서 빠르게 장비를 정상화하는 순발력을 길렀습니다.
-                        </p>
-                    </div>
-                    <div class="mt-6 pt-3 border-t border-mb-grey85 text-xs text-zinc-400 font-mono">
-                        음향 및 미디어 장비 제어 능력
-                    </div>
-                </div>
-
-                <div class="border border-mb-grey85 p-6 hover:border-black transition-colors duration-300 flex flex-col justify-between rounded-none">
-                    <div>
-                        <div class="flex justify-between items-center mb-4">
-                            <span class="bg-zinc-100 text-zinc-800 text-[10px] px-2 py-0.5 font-mono rounded-none">음악 활동</span>
-                            <span class="text-xs text-zinc-400 font-mono">2024.03 ~ 현재</span>
-                        </div>
-                        <h3 class="serif-title text-2xl text-black mb-3">오케스트라 활동</h3>
-                        <p class="text-zinc-600 text-xs md:text-sm leading-relaxed text-justify">
-                            작년까지는 긴밀히 협력하며 리듬의 맥박을 짚던 타악기 파트의 팀파니 주자로 임하였고, 현재는 오케스트라 전체의 비트와 흐름을 묵묵하면서도 폭발력 있게 이끌어가는 세트드럼(Set Drum) 주자로 굳건히 대활약하고 있습니다. 소통 속에서 완벽한 비트 일치를 만들어내며 협업의 가치를 익힙니다.
-                        </p>
-                    </div>
-                    <div class="mt-6 pt-3 border-t border-mb-grey85 text-xs text-zinc-400 font-mono">
-                        타악기 핵심 리듬 주도
-                    </div>
-                </div>
+    <section id="contact" class="py-24 bg-brand-dark text-white relative overflow-hidden">
+        <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMSIgY3k9IjEiIHI9IjEiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC4wNSkiLz48L3N2Zz4=')] opacity-50"></div>
+        
+        <div class="max-w-4xl mx-auto px-6 relative z-10 text-center space-y-8">
+            <h2 class="text-4xl md:text-5xl font-bold">새로운 가치를 연결할 준비가 되셨나요?</h2>
+            <p class="text-gray-400 text-lg max-w-2xl mx-auto">
+                마케팅 협력 제안부터 비전 공유까지. 당신의 비즈니스가 한 단계 도약할 수 있도록 확실한 데이터와 실행력으로 응답하겠습니다.
+            </p>
+            
+            <div class="flex flex-col sm:flex-row justify-center items-center gap-4 pt-8">
+                <a href="mailto:wyjang5@nate.com" class="px-8 py-4 bg-white text-black font-bold rounded-full hover:bg-gray-200 transition-colors flex items-center gap-3 w-full sm:w-auto justify-center">
+                    <i class="fa-solid fa-envelope"></i>
+                    wyjang5@nate.com
+                </a>
+                <a href="https://github.com/wyjang5" target="_blank" class="px-8 py-4 bg-gray-800 text-white font-bold rounded-full hover:bg-gray-700 transition-colors flex items-center gap-3 border border-gray-700 w-full sm:w-auto justify-center">
+                    <i class="fa-brands fa-github text-xl"></i>
+                    GitHub Profile
+                </a>
             </div>
         </div>
     </section>
 
-    <section id="contact" class="max-w-[86vw] mx-auto py-16 md:py-24">
-        <div class="border border-mb-grey85 bg-zinc-50 p-8 md:p-16 flex flex-col md:flex-row justify-between items-center gap-8 rounded-none">
-            <div class="space-y-4 max-w-xl">
-                <span class="text-mb-blue eyebrow-lowercase block">communication / channel</span>
-                <h2 class="serif-title text-3xl text-black font-light">비즈니스 문의 & 대화 채널</h2>
-                <p class="text-zinc-600 leading-relaxed text-sm text-justify">
-                    CONX Networks와의 마케팅 협력 제안 혹은 가치와 리더십에 관한 생각 공유 등 어떤 대화라도 환영합니다. 아래 공식 채널을 통해 언제든 연락해 주시기 바랍니다.
-                </p>
+    <footer class="bg-black text-gray-500 py-8 text-center border-t border-gray-900">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-4">
+            <div class="flex items-center space-x-2">
+                <span class="text-white font-serif italic text-lg">W</span>
+                <span class="text-sm font-bold tracking-widest text-white uppercase">Jang Woo Young</span>
             </div>
-
-            <div class="w-full md:w-auto bg-white border border-mb-grey80 p-8 space-y-4 min-w-[280px] md:min-w-[340px] rounded-none text-left">
-                <h4 class="text-xs font-mono text-zinc-400 uppercase tracking-wider">공식 다이렉트 채널</h4>
-                <div class="h-px bg-zinc-200 my-2"></div>
-                <div class="space-y-4">
-                    <a href="mailto:wyjang5@nate.com" class="flex items-center space-x-3 text-mb-blue hover:underline text-sm font-mono transition-all">
-                        <i class="fa-regular fa-envelope text-base w-5 text-center"></i>
-                        <span>wyjang5@nate.com</span>
-                    </a>
-                    <div class="flex items-center space-x-3 text-zinc-700 text-sm font-mono">
-                        <i class="fa-brands fa-github text-base w-5 text-center"></i>
-                        <span>github.com/wyjang5</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <footer class="border-t border-mb-grey85 py-12 bg-white">
-        <div class="max-w-[86vw] mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
-            <div class="flex items-center space-x-3">
-                <div class="w-6 h-6 flex items-center justify-center border border-black rounded-none text-[10px] font-serif italic">W</div>
-                <span class="text-xs font-semibold uppercase tracking-widest text-black font-serif">JANG WOO YOUNG</span>
-            </div>
-            <p class="text-[11px] text-mb-grey55 font-mono text-center md:text-right">
-                © 2026 JANG WOO YOUNG. All Rights Reserved.
+            <p class="text-sm font-mono">
+                © 2026 CONX Networks. All Rights Reserved.
             </p>
         </div>
     </footer>
 
     <script>
+        // Initialize Canvas when document is ready
         window.onload = function() {
             initScanner();
         };
@@ -419,32 +397,31 @@
             resizeCanvas();
             window.addEventListener('resize', resizeCanvas);
 
-            const shopTypes = ['로컬 맛집', '동네 카페', '글램핑장', '헤어샵', '스터디카페', '보안 서버'];
+            // Refined shop data
+            const shopTypes = ['로컬 맛집', '동네 카페', '글램핑장', '헤어샵', '스터디카페', '보안 망'];
             for (let i = 0; i < 6; i++) {
                 let angle = (i * Math.PI * 2) / 6 + Math.random() * 0.5;
-                let dist = 50 + Math.random() * 40;
+                let dist = 45 + Math.random() * 45; // slightly closer to center
                 shops.push({
                     name: shopTypes[i],
                     angle: angle,
                     distance: dist,
-                    status: '미달 (SEO 위험)',
-                    color: '#f97316',
+                    status: 'SEO_WARNING',
+                    color: '#ef4444', // Tailwind red-500
                     ripple: 0,
                     x: 0,
                     y: 0
                 });
             }
 
+            // Click Interaction
             canvas.addEventListener('click', function(e) {
                 const rect = canvas.getBoundingClientRect();
                 const clickX = e.clientX - rect.left;
                 const clickY = e.clientY - rect.top;
 
-                const centerX = canvas.width / 2;
-                const centerY = canvas.height / 2;
-
                 let closestShop = null;
-                let minDist = 35;
+                let minDist = 40; // Increased hit area slightly
 
                 shops.forEach(shop => {
                     const dist = Math.hypot(clickX - shop.x, clickY - shop.y);
@@ -454,14 +431,21 @@
                     }
                 });
 
-                if (closestShop && closestShop.status !== '최적화 완료') {
-                    closestShop.status = '최적화 완료';
-                    closestShop.color = '#10b981';
+                if (closestShop && closestShop.status !== 'OPTIMIZED') {
+                    closestShop.status = 'OPTIMIZED';
+                    closestShop.color = '#10b981'; // Tailwind emerald-500
                     closestShop.ripple = 1;
                     
-                    const optimizedCount = shops.filter(s => s.status === '최적화 완료').length;
+                    const optimizedCount = shops.filter(s => s.status === 'OPTIMIZED').length;
                     const percentage = Math.round((optimizedCount / shops.length) * 100);
-                    document.getElementById('optPercentage').textContent = `최적화 성공률: ${percentage}%`;
+                    
+                    // Update DOM element with animation effect
+                    const optEl = document.getElementById('optPercentage');
+                    optEl.textContent = `${percentage}%`;
+                    optEl.classList.add('scale-110', 'text-emerald-400');
+                    setTimeout(() => {
+                        optEl.classList.remove('scale-110', 'text-emerald-400');
+                    }, 300);
                 }
             });
 
@@ -476,67 +460,89 @@
         }
 
         function animateScanner() {
-            ctx.fillStyle = '#000000';
+            // Dark elegant background
+            ctx.fillStyle = '#0a0f1a';
             ctx.fillRect(0, 0, canvas.width, canvas.height);
 
             const centerX = canvas.width / 2;
             const centerY = canvas.height / 2;
-            const maxRadius = Math.min(centerX, centerY) - 20;
+            const maxRadius = Math.min(centerX, centerY) - 30;
 
-            ctx.strokeStyle = '#141414';
+            // Draw Radar Grid
+            ctx.strokeStyle = '#1e293b'; // Slate 800
             ctx.lineWidth = 1;
-            for (let r = maxRadius / 4; r <= maxRadius; r += maxRadius / 4) {
+            for (let r = maxRadius / 3; r <= maxRadius; r += maxRadius / 3) {
                 ctx.beginPath();
                 ctx.arc(centerX, centerY, r, 0, Math.PI * 2);
                 ctx.stroke();
             }
 
+            // Crosshairs
             ctx.beginPath();
             ctx.moveTo(centerX - maxRadius, centerY);
             ctx.lineTo(centerX + maxRadius, centerY);
             ctx.moveTo(centerX, centerY - maxRadius);
             ctx.lineTo(centerX, centerY + maxRadius);
+            ctx.setLineDash([5, 5]);
             ctx.stroke();
+            ctx.setLineDash([]); // Reset
 
-            radarAngle += 0.015;
+            // Radar Sweep Line
+            radarAngle += 0.02;
             ctx.beginPath();
             ctx.moveTo(centerX, centerY);
             ctx.lineTo(
                 centerX + Math.cos(radarAngle) * maxRadius,
                 centerY + Math.sin(radarAngle) * maxRadius
             );
-            ctx.strokeStyle = 'rgba(2, 96, 171, 0.4)';
+            
+            // Glow effect for radar line
+            ctx.shadowBlur = 10;
+            ctx.shadowColor = '#3b82f6';
+            ctx.strokeStyle = 'rgba(59, 130, 246, 0.8)';
             ctx.lineWidth = 2;
             ctx.stroke();
+            ctx.shadowBlur = 0; // Reset
 
+            // Draw Data Points (Shops)
             shops.forEach(shop => {
                 const x = centerX + Math.cos(shop.angle) * (shop.distance * maxRadius / 100);
                 const y = centerY + Math.sin(shop.angle) * (shop.distance * maxRadius / 100);
                 shop.x = x;
                 shop.y = y;
 
+                // Ripple Effect when clicked
                 if (shop.ripple > 0) {
-                    shop.ripple += 0.05;
+                    shop.ripple += 0.04;
                     ctx.beginPath();
-                    ctx.arc(x, y, shop.ripple * 25, 0, Math.PI * 2);
-                    ctx.strokeStyle = `rgba(16, 185, 129, ${1 - shop.ripple / 2})`;
-                    ctx.lineWidth = 1.5;
+                    ctx.arc(x, y, shop.ripple * 20, 0, Math.PI * 2);
+                    ctx.strokeStyle = `rgba(16, 185, 129, ${1 - shop.ripple / 2})`; // Emerald fade
+                    ctx.lineWidth = 1;
                     ctx.stroke();
                     if (shop.ripple > 2) shop.ripple = 0;
                 }
 
+                // Dot
                 ctx.beginPath();
-                ctx.arc(x, y, 5, 0, Math.PI * 2);
+                ctx.arc(x, y, 4, 0, Math.PI * 2);
                 ctx.fillStyle = shop.color;
+                
+                // Add glow to optimized dots
+                if(shop.status === 'OPTIMIZED') {
+                    ctx.shadowBlur = 8;
+                    ctx.shadowColor = shop.color;
+                }
                 ctx.fill();
+                ctx.shadowBlur = 0;
 
-                ctx.fillStyle = '#ffffff';
-                ctx.font = '10px Inter, sans-serif';
-                ctx.fillText(shop.name, x + 8, y - 3);
+                // Text Labels
+                ctx.fillStyle = '#94a3b8'; // Slate 400
+                ctx.font = '10px Pretendard, sans-serif';
+                ctx.fillText(shop.name, x + 8, y - 4);
 
                 ctx.fillStyle = shop.color;
-                ctx.font = '9px Inter, sans-serif';
-                ctx.fillText(shop.status, x + 8, y + 7);
+                ctx.font = '9px JetBrains Mono, monospace';
+                ctx.fillText(shop.status, x + 8, y + 8);
             });
 
             requestAnimationFrame(animateScanner);
